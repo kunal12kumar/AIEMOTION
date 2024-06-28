@@ -1,0 +1,70 @@
+/* * Now creating background for the website */
+body {
+    /* background-image: url("blue sea.jpg"); */
+    background-image: linear-gradient(226deg, #BF2A97, #6B14A6, #3866F2, #590B8C);
+
+    /* /* background-position:top ; */
+    background-size: cover;
+    background-repeat:no-repeat;
+    
+}
+.box{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* this is for the form */
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    gap: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+/* Now for input box */
+#searchbox {
+    width: 20rem;
+    height: 3rem;
+    border: 2px solid rgb(212, 0, 255);
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    animation: move 1.3s ease-in-out 1 forwards;
+    text-transform: uppercase;
+}
+
+/* keyframes for the searchbox */
+
+
+/* hover for the hover  */
+#searchbox:focus {
+    border: 4px solid rgb(212, 0, 255);
+
+
+}
+
+/* for submit button  */
+#Submit {
+    width: 9rem;
+    height: 3rem;
+    border: 2px solid blue;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+
+}
+
+
+#Submit:hover {
+    transform: scale(0.8);
+    background-color: #e696b0;
+}
