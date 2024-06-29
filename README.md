@@ -40,6 +40,7 @@ text input, emotion detection, and TTS processing. Libraries/Tools: Use Natural 
 real-time. This can be achieved through efficient model inference and API optimization.<br>
 <br>
 Summary
+<br>
 1.Collect Data: Use datasets like RAVDESS.
 <br>
 2. Preprocess Data: Extract features like MFCCs.<br>
