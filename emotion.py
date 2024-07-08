@@ -1,5 +1,6 @@
 import spacy
 import torch
+import pyttsx3
 from transformers import pipeline
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -38,11 +39,51 @@ def receive_data():
     # Example usage
     text = value
     emotions = get_emotions(text)
-
+    print(emotions)
     for emotion in emotions[0]:
         print(f"{emotion['label']}: {emotion['score']:.4f}")
         
+    # Initialize the TTS engine
+    engine = pyttsx3.init()
+
+    
+        # Determine the dominant emotion
+    emotion=emotions[0]
+    dominant_emotion = max(emotion, key=lambda x: x["score"])
+
+    # Your sentenced
+    sentence = value
+
+    # Set properties based on the dominant emotion
+    if dominant_emotion['label'] == 'joy':
+        engine.setProperty('rate', 150)  # Speed of speech
+        engine.setProperty('volume', 1.0)  # Volume of speech
+    elif dominant_emotion['label'] == 'sadness':
+        engine.setProperty('rate', 100)
+        engine.setProperty('volume', 0.5)
+    elif dominant_emotion['label'] == 'anger':
+        engine.setProperty('rate', 200)
+        engine.setProperty('volume', 0.8)
+    elif dominant_emotion['label'] == 'fear':
+        engine.setProperty('rate', 180)
+        engine.setProperty('volume', 0.6)
+    elif dominant_emotion['label'] == 'surprise':
+        engine.setProperty('rate', 170)
+        engine.setProperty('volume', 0.9)
+    else:  # Neutral or any other emotion
+        engine.setProperty('rate', 120)
+        engine.setProperty('volume', 0.7)
+
+    # Convert the sentence to speech
+    engine.say(sentence)
+    engine.runAndWait()
+
+        
     return jsonify({"status": "success", "data": data})
+
+
+# Sample emotions and their respective probabilities
+
 
 if __name__ == '__main__':
     app.run(debug=True)
