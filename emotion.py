@@ -53,8 +53,15 @@ def receive_data():
 
     # Your sentenced
     sentence = value
+    
 
     # Set properties based on the dominant emotion
+    voices = engine.getProperty('voices')
+    for voice in voices:
+        print(f"ID: {voice.id}, Name: {voice.name}")
+
+# Set a specific voice (example using the first available voice)
+    engine.setProperty('voice', voices[1].id)
     if dominant_emotion['label'] == 'joy':
         engine.setProperty('rate', 150)  # Speed of speech
         engine.setProperty('volume', 1.0)  # Volume of speech
@@ -71,7 +78,7 @@ def receive_data():
         engine.setProperty('rate', 170)
         engine.setProperty('volume', 0.9)
     else:  # Neutral or any other emotion
-        engine.setProperty('rate', 120)
+        engine.setProperty('rate', 160)
         engine.setProperty('volume', 0.7)
 
     # Convert the sentence to speech
