@@ -1,0 +1,71 @@
+body {
+    background-image: url(space.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.enter {
+    position: relative;
+    color: aliceblue;
+    border: 2px solid rgba(255, 255, 255, .2);
+    height: auto; /* Let height adjust based on content */
+    width: 80%; /* Adjust width to occupy 80% of the viewport width */
+    max-width: 400px; /* Limit maximum width for larger screens */
+    background-color: transparent;
+    border-radius: 50px;
+    padding: 1rem; /* Use rem for padding */
+    margin: auto;
+    display: flex;
+    justify-content: space-between; /* Space out items within the container */
+    align-items: center; /* Center items vertically */
+    flex-direction: row; /* Align items in a row */
+    font-family: monospace;
+    box-shadow: 0px 0px 10px rgba(215, 213, 215, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.enter .e {
+    border: 2px solid rgba(255, 255, 255, .2);
+    width: 80%; /* Adjust width relative to parent */
+    height: 40px; /* Fixed height for text input */
+    background: transparent;
+    border-radius: 50px;
+    padding: 1rem;
+    text-align: center;
+    color: aliceblue; /* Text color */
+    font-size: 1.5rem; /* Adjust font size */
+    outline: none; /* Remove default outline */
+    font-family: monospace;
+}
+
+.enter .f {
+    border: 2px solid rgba(255, 255, 255, .2);
+    width: 30%; /* Adjust width relative to parent */
+    height: 60px; /* Fixed height for button */
+    background: transparent;
+    border-radius: 50px;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer; /* Change cursor to pointer */
+    color: aliceblue; /* Ensure text color is visible */
+    font-size: 1rem; /* Adjust font size */
+    font-family: monospace;
+}
+
+.enter .f:hover {
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(63, 9, 117, 0));
+}
+
+@media (max-width: 768px) {
+    .enter {
+        width: 90%; /* Adjust width for smaller screens */
+        max-width: none; /* Remove max-width for smaller screens */
+    }
+}
