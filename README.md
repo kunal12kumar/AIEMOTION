@@ -17,7 +17,7 @@ such as happiness, exclamation, anger, sadness, and politeness.<br>
 
 Enhance a text-to-speech (TTS) model to incorporate emotional cues. This involves:<br>
 
-• Selecting a TTS Engine: Choosing a robust TTS engine like Tacotron 2 or WaveNet, which can be fine-tuned.<br>
+• Selecting a TTS Engine: Choosing a robust TTS engine like pyttsx3 or gtts, which can be fine-tuned.<br>
 
 • Emotion Embeddings: Incorporate emotion embeddings into the TTS model. These embeddings will modify the prosody, pitch, and tone of the synthesized speech to reflect the detected emotion.
 <br>
@@ -46,7 +46,7 @@ Summary
 2. Preprocess Data: Extract features like MFCCs.<br>
 3. Develop Models:<br>
    - Emotion classification: RNN or transformer.<br>
-   - Audio synthesis: WaveNet or Tacotron.<br>
+   - Audio synthesis: Pyttsx3 or gtts.<br>
 4. Train Models: Train using labeled data.<br>
 5. Inference Pipeline: Predict emotion and generate audio.<br>
 6. Evaluate Models: Use accuracy and MOS.<br>
