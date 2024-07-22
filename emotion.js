@@ -1,6 +1,6 @@
 const form = document.querySelector(".inputb");
-const submit = document.querySelector("#Submit");
-const searchbox = document.querySelector("#searchbox");
+const submit = document.querySelector(".Submit");
+const searchbox = document.querySelector(".searchbox");
 
 
 form.addEventListener("submit", (e) => {
